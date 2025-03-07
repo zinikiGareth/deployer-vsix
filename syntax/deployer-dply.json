@@ -1,0 +1,15 @@
+{
+  "name": "deployer-dply",
+  "scopeName": "source.deployer-dply",
+  "patterns": [
+    {
+      "include": "#target"
+    }
+  ],
+  "repository": {
+    "target": {
+      "name": "keyword.target",
+      "match": "target"
+    }
+  }
+}

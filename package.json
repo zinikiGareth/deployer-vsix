@@ -1,0 +1,76 @@
+{
+  "name": "deployer",
+  "displayName": "Deployer",
+  "description": "Editing Deployer Files",
+  "version": "0.0.1",
+  "publisher": "Ziniki",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zinikiGareth/zinikiTools.git"
+  },
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "activationEvents": [
+    "onLanguage:html"
+  ],
+  "main": "out/deployer.js",
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "deployer-dply",
+        "extensions": [
+          ".dply"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "deployer-dply",
+        "path": "./syntax/deployer-dply.json",
+        "scopeName": "source.deployer-dply"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "FLAS",
+      "properties": {
+        "DPLY.connectToServer": {
+          "scope": "window",
+          "type": "integer",
+          "default": "0",
+          "description": "Connect to existing server on well-known port."
+        },
+        "DPLY.trace.server": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the language server."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.2.2",
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/vscode": "^1.97.0",
+    "typescript": "^5.8.2"
+  }
+}
