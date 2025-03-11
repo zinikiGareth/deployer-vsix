@@ -12,9 +12,10 @@
     "vscode": "^1.97.0"
   },
   "activationEvents": [
-    "onLanguage:html"
+    "onLanguage:deployer-dply"
   ],
   "main": "out/deployer.js",
+	"files": ["package.json", "out", "syntax", "license.txt"],
   "categories": [
     "Programming Languages"
   ],
@@ -65,10 +66,10 @@
     "watch": "tsc -watch -p ./"
   },
   "dependencies": {
-    "@vscode/vsce": "^3.2.2",
-    "vscode-languageclient": "^9.0.1"
   },
   "devDependencies": {
+    "@vscode/vsce": "^3.2.2",
+    "vscode-languageclient": "^9.0.1",
     "@types/node": "^22.13.9",
     "@types/vscode": "^1.97.0",
     "typescript": "^5.8.2"
