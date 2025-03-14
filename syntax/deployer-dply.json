@@ -3,10 +3,17 @@
   "scopeName": "source.deployer-dply",
   "patterns": [
     {
+      "include": "#literate"
+    },
+    {
       "include": "#target"
     }
   ],
   "repository": {
+    "literate": {
+      "name": "comment.block",
+      "match": "^[^ \t].*$"
+    },
     "target": {
       "name": "keyword.target",
       "match": "target"
