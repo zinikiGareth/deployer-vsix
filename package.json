@@ -2,7 +2,7 @@
   "name": "deployer",
   "displayName": "Deployer",
   "description": "Editing Deployer Files",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "Ziniki",
   "repository": {
     "type": "git",
@@ -15,7 +15,18 @@
     "onLanguage:deployer-dply"
   ],
   "main": "out/deployer.js",
-	"files": ["package.json", "out", "syntax", "license.txt"],
+	"files": [
+    "package.json",
+    "out",
+    "syntax",
+    "license.txt",
+    "node_modules/vscode-languageclient/**",
+    "node_modules/vscode-languageserver-protocol/**",
+    "node_modules/vscode-languageserver-types/**",
+    "node_modules/{minimatch,brace-expansion,concat-map,balanced-match}/**",
+    "node_modules/vscode-jsonrpc/**",
+    "node_modules/{semver,lru-cache,yallist}/**"
+  ],
   "categories": [
     "Programming Languages"
   ],
@@ -66,10 +77,10 @@
     "watch": "tsc -watch -p ./"
   },
   "dependencies": {
+    "vscode-languageclient": "^9.0.1"
   },
   "devDependencies": {
     "@vscode/vsce": "^3.2.2",
-    "vscode-languageclient": "^9.0.1",
     "@types/node": "^22.13.9",
     "@types/vscode": "^1.97.0",
     "typescript": "^5.8.2"
