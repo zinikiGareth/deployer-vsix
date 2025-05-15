@@ -2,7 +2,7 @@
   "name": "deployer",
   "displayName": "Deployer",
   "description": "Editing Deployer Files",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "Ziniki",
   "repository": {
     "type": "git",
@@ -80,7 +80,7 @@
     "vscode-languageclient": "^9.0.1"
   },
   "devDependencies": {
-    "@vscode/vsce": "^3.2.2",
+    "@vscode/vsce": "^3.4.0",
     "@types/node": "^22.13.9",
     "@types/vscode": "^1.97.0",
     "typescript": "^5.8.2"

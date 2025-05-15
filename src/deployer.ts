@@ -7,6 +7,7 @@ import {
 	ServerOptions,
 	StreamInfo
 } from 'vscode-languageclient/node';
+import { Folder } from './folder.js';
   
 let client : LanguageClient;
 
@@ -55,7 +56,7 @@ export function activate(context: ExtensionContext) {
 		clientOptions
 	);
 	
-	client.outputChannel.appendLine(connMsg);
+	// client.outputChannel.appendLine(connMsg);
 
 	// Start the client. This will also launch the server
 	client.start().then(() => {
@@ -64,6 +65,9 @@ export function activate(context: ExtensionContext) {
 			arguments: [ ]
 		});	
 	});
+
+	var xx = languages.registerFoldingRangeProvider({ scheme: 'file', language: 'deployer-dply' }, new Folder(client.outputChannel));
+	context.subscriptions.push(xx);
 }
 
 function connectToSocket(port: number) {
